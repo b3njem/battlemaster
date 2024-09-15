@@ -2,8 +2,9 @@
 :root {
     --background-color: #121212;
     --card-background: #1e1e1e;
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
     --success-color: #28a745;
     --danger-color: #dc3545;
     --text-color: #f0f0f0;
@@ -19,14 +20,35 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 20px;
+    background-image: url("https://media.discordapp.net/attachments/1277916336433135626/1284934359928934501/Default_grassland_biome_sunny_2D_art_1.jpg?ex=66e86fe0&is=66e71e60&hm=52eb70cfeb2edbcdf086a4570716a75195c37e99b716f05803501be17d028cde&=&format=webp&width=1960&height=1106");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 50px;
+    
+    /* Centering adjustments */
+    position: relative; /* Change from absolute to relative */
+    margin: 0 auto; /* Center horizontally */
+    top: 0; /* Ensure it's aligned at the top */
+    transform: none; /* Remove the translate as it's no longer needed */
 }
 
 /* Headings */
+
 h1, h2 {
     color: var(--heading-color);
     margin-bottom: 20px;
@@ -57,11 +79,18 @@ label {
     padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    background-color: var(--card-background);
     border: 1px solid #333;
     color: var(--text-color);
-    border-radius: var(--border-radius);
     font-size: 1rem;
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    color: var(--second-color);
+    padding-inline: 20px 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.5s;
 }
 
 /* Select Fields */
@@ -91,7 +120,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ed7e00;
     transform: translateY(-2px);
 }
 
@@ -130,13 +159,13 @@ button:hover {
 }
 
 .player {
-    background-color: var(--card-background);
     border-radius: var(--border-radius);
     padding: 20px;
     box-sizing: border-box;
     flex: 1 1 calc(48% - 10px);
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 10px;
 }
 
 .player:not(:last-child) {
@@ -195,11 +224,11 @@ button:hover {
 
 /* Environment Section */
 .environment {
-    background-color: var(--card-background);
     border-radius: var(--border-radius);
     padding: 20px;
     margin-bottom: 40px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 10px;
 }
 
 .environment h2 {
@@ -280,9 +309,18 @@ button:hover {
 }
 
 /* Form Focus States */
-.input-field:focus, .unit-select:focus, .unit-count:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+.input-field:focus, .input-field:focus .unit-select:focus, .unit-count:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: .7; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+    color: rgb(255, 255, 255);
 }
 
 /* Scrollbar Styles */
