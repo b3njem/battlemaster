@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle Simulator</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Battle Simulator</h1>
+
+        <!-- Player Inputs -->
+        <div class="player-inputs">
+            <!-- Player 1 -->
+            <div class="player player1">
+                <h2>Player 1</h2>
+                <label for="player1Name">Name:</label>
+                <input type="text" id="player1Name" class="input-field" placeholder="Enter Player 1 Name" />
+
+                <div class="units">
+                    <div class="unit-row">
+                        <select class="unit-select input-field"></select>
+                        <input type="number" class="unit-count input-field" min="0" value="0">
+                        <button type="button" class="remove-unit">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="addUnitP1">Add Unit</button>
+            </div>
+
+            <!-- Player 2 -->
+            <div class="player player2">
+                <h2>Player 2</h2>
+                <label for="player2Name">Name:</label>
+                <input type="text" id="player2Name" class="input-field" placeholder="Enter Player 2 Name" />
+
+                <div class="units">
+                    <div class="unit-row">
+                        <select class="unit-select input-field"></select>
+                        <input type="number" class="unit-count input-field" min="0" value="0">
+                        <button type="button" class="remove-unit">Remove</button>
+                    </div>
+                </div>
+                <button type="button" id="addUnitP2">Add Unit</button>
+            </div>
+        </div>
+
+        <!-- Environmental Factors -->
+        <div class="environment">
+            <h2>Environment</h2>
+            <label for="terrain">Terrain:</label>
+            <select id="terrain" class="input-field">
+                <option value="plains">Plains</option>
+                <option value="forest">Forest</option>
+                <option value="hills">Hills</option>
+            </select>
+
+            <label for="weather">Weather:</label>
+            <select id="weather" class="input-field">
+                <option value="sunny">Sunny</option>
+                <option value="rain">Rain</option>
+                <option value="fog">Fog</option>
+                <option value="storm">Storm</option>
+                <option value="snow">Snow</option>
+            </select>
+        </div>
+
+        <!-- Simulate Button -->
+        <button type="button" id="simulateButton">Simulate Battle</button>
+
+        <!-- Result Display -->
+        <div id="result"></div>
+    </div>
+
+    <!-- Include your JavaScript files -->
+    <script src="battlesimulator.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+

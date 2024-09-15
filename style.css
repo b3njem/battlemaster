@@ -1,0 +1,304 @@
+/* Root Variables for Theming */
+:root {
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --text-color: #f0f0f0;
+    --heading-color: #ffffff;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+.input-field {
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--card-background);
+    border: 1px solid #333;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+/* Select Fields */
+.select-field {
+    appearance: none;
+    background-color: var(--card-background);
+    border: 1px solid #333;
+    color: var(--text-color);
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+/* Buttons */
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#simulateButton {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.remove-unit {
+    background-color: var(--danger-color);
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.remove-unit:hover {
+    background-color: #c82333;
+}
+
+#addUnitP1, #addUnitP2 {
+    background-color: var(--success-color);
+    margin-top: 15px;
+}
+
+#addUnitP1:hover, #addUnitP2:hover {
+    background-color: #218838;
+}
+
+/* Player Cards */
+.player-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.player {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1 1 calc(48% - 10px);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.player:not(:last-child) {
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .player {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+}
+
+/* Unit Rows */
+.unit-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.unit-row .unit-select, .unit-row .unit-count {
+    flex: 1;
+}
+
+.unit-row .unit-select {
+    margin-right: 10px;
+}
+
+.unit-row .unit-count {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.unit-select {
+    appearance: none;
+    background-color: var(--card-background);
+    border: 1px solid #333;
+    color: var(--text-color);
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.unit-count {
+    background-color: var(--card-background);
+    border: 1px solid #333;
+    color: var(--text-color);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Environment Section */
+.environment {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.environment h2 {
+    margin-top: 0;
+}
+
+.environment label {
+    margin-top: 15px;
+}
+
+.environment .input-field {
+    margin-bottom: 0;
+}
+
+/* Result Display */
+#result {
+    margin-top: 40px;
+}
+
+/* Table Styling */
+.army-results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.army-results th, .army-results td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: center;
+}
+
+.army-results th {
+    background-color: #222;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.army-results td {
+    background-color: #1e1e1e;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.army-results tr:nth-child(even) td {
+    background-color: #2a2a2a;
+}
+
+/* Responsive Tables */
+@media (max-width: 600px) {
+    .army-results table, .army-results thead, .army-results tbody, .army-results th, .army-results td, .army-results tr {
+        display: block;
+    }
+
+    .army-results tr {
+        margin-bottom: 15px;
+    }
+
+    .army-results td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .army-results td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .army-results th {
+        display: none;
+    }
+}
+
+/* Form Focus States */
+.input-field:focus, .unit-select:focus, .unit-count:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
