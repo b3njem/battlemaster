@@ -1,0 +1,2 @@
+# battlemaster
+Fantasy Battle Calculator
