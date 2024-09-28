@@ -1,0 +1,301 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with Background Image */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/main.jpg'); /* Ensure main.jpg is in battlemaster/images/ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glassmorphism Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay for better contrast */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Units Container */
+.units-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 1200px;
+    width: 90%;
+    color: #ffffff;
+}
+
+/* Heading Styling */
+.units-container h1 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Cards Container */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Unit Card Styling */
+.unit-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* Unit Banner Styling */
+.unit-banner {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.unit-banner h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Unit Image Styling */
+.unit-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 50px; /* Space for the banner */
+}
+
+/* Image Placeholder Styling */
+.unit-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Space for the banner */
+}
+
+.unit-image-placeholder i {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Attributes Styling */
+.attributes {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.attribute {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.attribute i {
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #ffcc00;
+}
+
+.attribute span {
+    font-size: 1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Down Arrow Icon Styling */
+.more-info {
+    margin-top: auto;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.more-info i {
+    font-size: 1.5em;
+    color: #ffffff;
+    transition: transform 0.3s;
+}
+
+.more-info:hover i {
+    transform: translateY(5px);
+}
+
+/* Back Button Styling */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 16px;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Close Button */
+.close-button {
+    color: #fff;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Modal Card */
+.modal-card {
+    width: 45%;
+}
+
+/* Enlarged Unit Card in Modal */
+.unit-card.enlarged {
+    background: none;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    width: 100%;
+    margin: 0;
+}
+
+.unit-card.enlarged .unit-banner {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.unit-card.enlarged .unit-image {
+    margin-top: 0;
+}
+
+.unit-card.enlarged .attributes {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Info */
+.modal-info {
+    width: 50%;
+    padding: 20px;
+    font-size: 1.2em;
+    text-align: left;
+    overflow-y: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .units-container {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+
+    .units-container h1 {
+        font-size: 2em;
+    }
+
+    .unit-card {
+        width: 80%;
+    }
+
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-card, .modal-info {
+        width: 100%;
+    }
+
+    .modal-info {
+        margin-top: 20px;
+    }
+}
+
